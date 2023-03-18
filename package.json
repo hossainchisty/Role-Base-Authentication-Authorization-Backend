@@ -1,0 +1,38 @@
+{
+  "name": "role-based-authorization-backend",
+  "version": "1.0.0",
+  "description": "Role based authorization checks: Are declarative and specify roles which the current user must be a member of to access the requested resource.",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Hossain Chisty",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hossainchisty/Role-Base-Authentication-Authorization-Backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hossainchisty/Role-Base-Authentication-Authorization-Backend/issues"
+  },
+  "homepage": "https://github.com/hossainchisty/Role-Base-Authentication-Authorization-Backend#readme"
+}
