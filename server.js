@@ -3,17 +3,18 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 
 // Middlewares
-// const {
-//   errorHandler,
-// } = require("./src/modulers/list-service/application/middleware/errorMiddleware");
+const {
+  errorHandler,
+} = require("./src/application/middlewares/errorMiddleware");
+
+const requireRole = require("./src/application/middlewares/requireRole");
 
 // Database connection with mongoose
-// const connectDB = require("./src/modulers/list-service/infrastructure/mongodb/db");
-// connectDB();
+const connectDB = require("./src/infrastructure/mongodb/db");
+connectDB();
 
 // Routers
-// const listingsRouter = require("./src/modulers/list-service/application/routes/listing.routers");
-// const hostRouter = require("./src/modulers/host-service/application/routes/host.routers");
+const userRouter = require("./src/application/routers/userRouter");
 
 // Express app initialization
 const port = process.env.PORT || 3000;
@@ -23,12 +24,11 @@ const app = express();
 app.use(express.json());
 
 // Error handler middleware
-// app.use(errorHandler);
+app.use(errorHandler);
 
 // Application routes
-// app.use("/api/v1/listings/", listingsRouter);
-// app.use("/api/v1/host/", hostRouter);
+app.use("/api/v1/users/", userRouter);
 
 app.listen(port, () =>
-  console.log(`Server started on port http://127.0.0.1:${port}`)
+  console.log(`Server started on port http://localhost:${port}`)
 );
